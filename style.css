@@ -1,0 +1,215 @@
+/* === GLOBAL STYLES === */
+* {
+  margin: 0; /* Reset margin -> menghilangkan jarak default */
+  padding: 0; /* Reset padding -> menghilangkan ruang default */
+  box-sizing: border-box; /* Padding & border ikut hitung ke width/height elemen */
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Font modern & clean */
+  background: linear-gradient(
+    135deg,
+    #667eea 0%,
+    #764ba2 100%
+  ); /* Latar gradasi ungu */
+  min-height: 100vh; /* Tinggi minimal layar penuh */
+  padding: 40px 20px; /* Ruang dalam body atas-bawah 40px */
+}
+
+.container {
+  max-width: 1200px; /* Batas maksimal lebar kontainer */
+  margin: 0 auto; /* Menempatkan kontainer ke tengah */
+}
+
+.section {
+  background: white; /* Background putih untuk konten */
+  border-radius: 16px; /* Membuat sudut melengkung */
+  padding: 40px; /* Memberi ruang dalam 40px */
+  margin-bottom: 40px; /* Jarak bawah antar section */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+}
+
+.section-title {
+  font-size: 24px; /* Ukuran teks judul */
+  color: #1e293b; /* Warna teks gelap */
+  margin-bottom: 24px; /* Jarak bawah judul */
+  text-align: center; /* Teks ditengah */
+  font-weight: 600; /* Teks semi-bold */
+}
+
+/* === ALERT INFO === */
+.alert {
+  position: relative; /* Supaya tombol X bisa posisinya absolut */
+  background: #e0f2fe; /* Biru muda background alert */
+  border: 1px solid #38bdf8; /* Border biru */
+  border-radius: 12px; /* Sudut melengkung */
+  padding: 16px 48px 16px 16px; /* Extra ruang kanan untuk tombol X */
+  box-shadow: 0 2px 8px rgba(56, 189, 248, 0.15); /* Shadow lembut biru */
+  transition: all 0.3s ease; /* Animasi transisi halus */
+}
+
+.alert p {
+  color: #075985; /* Teks biru gelap */
+  font-size: 15px; /* Ukuran teks */
+  line-height: 1.6; /* Jarak antar baris */
+  margin: 0; /* Hilangkan margin default */
+}
+
+.alert .close {
+  position: absolute; /* Melekat pada parent alert */
+  top: 50%; /* Posisi vertikal center */
+  right: 12px; /* Jarak kanan */
+  transform: translateY(-50%); /* Center tepat */
+  background: transparent; /* Tanpa background */
+  border: none; /* Hilangkan border tombol */
+  font-size: 24px; /* Ukuran tombol X */
+  color: #0284c7; /* Warna X biru */
+  cursor: pointer; /* Pointer saat hover */
+  width: 32px;
+  height: 32px; /* Ukuran tombol */
+  border-radius: 6px; /* Sudut tombol */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center teks */
+  transition: background 0.3s ease; /* Efek hover */
+}
+
+.alert .close:hover {
+  background: #bae6fd; /* Warna saat hover */
+}
+
+.alert.hidden {
+  display: none; /* Menyembunyikan alert */
+}
+
+/* === PROFILE CARD === */
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Layout vertikal center */
+  background: white;
+  border-radius: 16px;
+  padding: 32px; /* Tampilan card */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Shadow ringan */
+  max-width: 300px;
+  margin: 0 auto; /* Lebar kartu & center */
+  transition: transform 0.3s, box-shadow 0.3s; /* Animasi hover */
+}
+
+.profile-card:hover {
+  transform: scale(1.05); /* Membesar saat hover */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Shadow lebih besar */
+}
+
+.avatar {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.avatar img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%; /* Bikin foto bulat */
+  object-fit: cover; /* Crop proporsional */
+  border: 4px solid #e0e7ff; /* Border ungu muda */
+}
+
+.badge {
+  position: absolute;
+  top: 0;
+  right: 0; /* Muncul di pojok foto */
+  background: #22c55e;
+  color: white; /* Hijau aktif */
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.3); /* Shadow badge */
+}
+
+/* Pricing */
+.pricing {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap; /* Susun kartu responsif */
+}
+
+.plan {
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 32px 24px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.plan:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+}
+
+.plan.highlight {
+  border-color: #4f46e5;
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #f8f9ff, #fff);
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.15);
+}
+
+.plan ul {
+  list-style: none;
+  margin-bottom: 28px;
+  flex-grow: 1;
+}
+.plan ul li {
+  padding: 10px 0 10px 24px;
+  border-bottom: 1px solid #f1f5f9;
+  position: relative;
+}
+.plan ul li:before {
+  content: "✓";
+  left: 0;
+  position: absolute;
+  color: #22c55e;
+  font-weight: bold;
+}
+
+.plan button {
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.plan button:hover {
+  background: #4338ca;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section {
+    padding: 24px;
+  }
+  .pricing {
+    flex-direction: column;
+    align-items: center;
+  }
+  .plan {
+    width: 100%;
+    max-width: 320px;
+  }
+  .plan.highlight {
+    transform: scale(1);
+  }
+}

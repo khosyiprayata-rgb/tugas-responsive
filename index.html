@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas CSS Components - Khosyi Abqory Prayata</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- TUGAS 1: ALERT INFO -->
+      <div class="section">
+        <div class="alert" id="alertBox">
+          <p>ℹ️ Info: Pastikan data Anda sudah lengkap sebelum dikirim.</p>
+          <button
+            class="close"
+            onclick="document.getElementById('alertBox').classList.add('hidden')"
+          >
+            ×
+          </button>
+        </div>
+      </div>
+
+      <!-- TUGAS 2: PROFILE CARD -->
+      <div class="section">
+        <div class="profile-card">
+          <div class="avatar">
+            <img src="assets/image.png" alt="photo Khosyi" />
+            <span class="badge">Active</span>
+          </div>
+          <h3>Khosyi Abqory Prayata</h3>
+          <p>Frontend Developer</p>
+        </div>
+      </div>
+
+      <!-- TUGAS 3: PRICING CARDS -->
+      <div class="section">
+        <div class="pricing">
+          <div class="plan">
+            <h3>Basic</h3>
+            <p class="price">Rp300.000</p>
+            <ul>
+              <li>1 Project</li>
+              <li>Community Support</li>
+              <li>Basic Features</li>
+              <li>Email Support</li>
+            </ul>
+            <button>Pilih Paket</button>
+          </div>
+
+          <div class="plan highlight">
+            <h3>Pro</h3>
+            <p class="price">Rp600.000</p>
+            <ul>
+              <li>5 Projects</li>
+              <li>Priority Support</li>
+              <li>Advanced Features</li>
+              <li>24/7 Phone Support</li>
+            </ul>
+            <button>Pilih Paket</button>
+          </div>
+
+          <div class="plan">
+            <h3>Enterprise</h3>
+            <p class="price">Rp150.0000</p>
+            <ul>
+              <li>Unlimited Projects</li>
+              <li>Dedicated Support</li>
+              <li>All Features</li>
+              <li>Custom Integration</li>
+            </ul>
+            <button>Pilih Paket</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
